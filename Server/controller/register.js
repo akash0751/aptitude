@@ -5,7 +5,7 @@ const dotenv = require('dotenv')
 const cookieParser = require('cookie-parser'); 
 const AptitudeUser = require('../models/user')
 dotenv.config()
-const sendMail = require('../Middleware/sendMail')
+const sendMail = require('../middleware/sendMail')
 const { OAuth2Client } = require('google-auth-library');
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
