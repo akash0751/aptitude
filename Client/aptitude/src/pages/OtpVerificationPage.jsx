@@ -31,7 +31,7 @@ const OtpVerificationPage = ({ email }) => {
       localStorage.setItem("token_expiry", decoded.exp * 1000);
       localStorage.removeItem("tempToken");
 
-      navigate("/");
+      navigate("/addProfile");
     } catch (err) {
       alert(err.response?.data?.message || "Failed to verify OTP.");
     }

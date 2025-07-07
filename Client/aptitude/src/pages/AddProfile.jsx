@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axiosInstance from '../utils/axiosInstance';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { useNavigate } from 'react-router-dom';
 const AddProfile = () => {
   const api = import.meta.env.VITE_API_URL;
   const token = localStorage.getItem('token');
@@ -12,7 +12,7 @@ const AddProfile = () => {
   const [email, setEmail] = useState('');
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
-
+const Navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -37,6 +37,7 @@ const AddProfile = () => {
       });
 
       toast.success('✅ Profile created successfully!');
+      Navigate('/')
       setName('');
       setRole('');
       setEmail('');
