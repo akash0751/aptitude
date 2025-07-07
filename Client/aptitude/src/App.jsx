@@ -4,12 +4,13 @@ import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import LoginPage from "./pages/LoginPage";
 import OtpVerificationPage from "./pages/OtpVerificationPage";
-import ForgotOTP from "../../../../../E-COMM(finalcall)/E-COMM/vyapar/src/components/ForgotOtp";
+
 import EmailComponent from "./pages/EmailComponent";
 import SetNewPasswordPage from "./pages/SetNewPasswordPage";
 import AddPost from "./pages/AddPost";
 import AddProfile from "./pages/AddProfile";
 import YourProfile from "./pages/UserProfile";
+import ForgotOTP from "./pages/ForgotOtp";
 
 const App = () => {
 
