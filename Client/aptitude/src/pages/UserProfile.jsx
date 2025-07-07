@@ -113,7 +113,7 @@ const YourProfile = () => {
         const profileRes = await axiosInstance.get(`${api}/clideal/getProfile/${userId}`);
         setProfile(profileRes.data.profile);
 
-        const postRes = await axiosInstance.get(`${api}/clideal/getPosts/${userId}`);
+        const postRes = await axiosInstance.get(`${api}/clideal/getPostById/${userId}`);
         setPosts(postRes.data.posts || []);
       } catch (err) {
         console.error('Error fetching profile data:', err.message);
