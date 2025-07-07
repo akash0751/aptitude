@@ -14,7 +14,7 @@ const notificationRoute = require('./routes/notification');
 const app = express();
 
 app.use(cors({
-    origin: ["http://localhost:5173"],
+    origin: ["http://localhost:5173","https://aptitude-livid-tau.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
 }));
