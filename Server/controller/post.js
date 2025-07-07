@@ -55,7 +55,7 @@ const getPost = async (req, res) => {
 const getsPost = async (req, res) =>{
     try{
         const post = await AptitudePost.find({author:req.params.userId})
-        res.status(200).json({posts:post});
+        res.status(200).json({post:post});
         }catch(err){
             res.status(500).json({message:err.message})
         }
