@@ -60,15 +60,21 @@ const getsPost = async (req, res) =>{
             res.status(500).json({message:err.message})
         }
 }
-const getPostById = async (req, res) =>{
-    try{
-        const id = req.params.userId
-        const post = await AptitudePost.findById(id)
-        res.status(200).json({post})
-    }catch{
-        res.status(500).json({message:"Error fetching post by id"})
-    }
-}
+const getPostById = async (req, res) => {
+  try {
+    const userId = req.params.userId;
+    const posts = await AptitudePost.find({ author: userId }).populate({
+      path: 'author',
+      model: 'AptitudeProfile',
+      select: 'name role image',
+    });
+
+    res.status(200).json({ posts });
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching posts by user ID" });
+  }
+};
+
 
 // In your backend controller (e.g., postController.js)
 const updatePost = async (req, res) => {
