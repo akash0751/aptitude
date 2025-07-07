@@ -56,7 +56,8 @@ const generateToken = (user) => {
 const otpVerify = async (req, res) => {
   try {
     const { otp } = req.body;
-    const token = req.cookies.jwt;
+    const token = req.cookies.jwt || req.body.token;
+
 
     if (!token) {
       return res.status(401).send({ message: "Token not found, please register again" });
